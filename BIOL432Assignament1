@@ -1,0 +1,22 @@
+#1 Creating a vector of 5 species names and then randomly selecting 100 of them 
+specices <- c("Vulpes vulpes","Hemerocallis hybrids","Felis catus", "Hippopotamus amphibius","Coccinellidae septempunctata")
+vector_of_species <- sample(specices, size = 100, replace = TRUE)
+vector_of_species
+#2 Creating a vector of 100 randomly generated limb widths between 1-20 
+limb_width <- runif(100, min=1, max=20)
+limb_width
+#3 Creating a vector of 100 randomly generated limb lengths between 1-50 
+limb_length <- runif(100, min = 1, max=50)
+limb_length
+#4 Creating a vector of three names and then randomly selecting 100 of them
+names <-c("Olivia","Mia", "Brooke")
+Observer <- sample(names, size = 100, replace = TRUE)
+Observer
+#5 Creating a new data frame that has species name, limb length, width and the name of the observer. Finally, exporting the data frame into a csv file
+new_data_frame <- data.frame(Species=vector_of_species,
+                             LimbWidth=limb_width,
+                             LimbLength=limb_length,
+                             Observer=Observer)
+new_data_frame
+write.csv(new_data_frame," measurements.csv")
+read.csv("measurements.csv")
